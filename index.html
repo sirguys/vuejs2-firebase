@@ -1,29 +1,11 @@
-<!doctype html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.3/vue.js"></script>
-
-<div id="app">
-  <input v-model.number="x"/>
-  <input v-model.number="y"/>
-  <p>{{ result }}</p>
-  <p>{{ lastUpdate }}</p>
-</div>
-
-<script>
-  new Vue({
-    data() {
-      return {
-        x: 0,
-        y: 0
-      }
-    },
-    computed: {
-      result () {
-        return this.x + this.y
-      },
-      lastUpdate () {
-        this.result
-        return new Date()
-      }
-    }
-  }).$mount('#app')
-</script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>vuejs2-firebase</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
