@@ -12,11 +12,21 @@
 import firebase from 'firebase'
 
 export default {
+  beforeRouteEnter (to, from, next) {
+    const cancle = firebase.auth().onAuthStateChanged((user) => {
+      cancle()
+      if (user) {
+        next(to.query.redirect || '/')
+        return
+      }
+      next()
+    })
+  },
   methods: {
     signIn () {
       firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider())
         .then((res) => {
-          console.log(res)
+          this.$router.replace(this.$route.query.redirect || '/')
         })
     }
   }

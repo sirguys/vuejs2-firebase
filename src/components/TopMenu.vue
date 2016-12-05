@@ -3,8 +3,8 @@
     <router-link to='/' class='item' active-class='active' exact>Home</router-link>
     <div class="right menu">
       <router-link to='/profile' class='item' active-class='active'>Profile</router-link>
-      <router-link to='/signin' class='item' active-class='active'>Sign In</router-link>
-      <div v-if='currentUser' class="link item">Sign Out</div>
+      <div v-if='currentUser' @click='signOut' class="link item">Sign Out</div>
+      <router-link v-else to='/signin' class='item' active-class='active'>Sign In</router-link>
     </div>
   </div>
 </template>
@@ -21,6 +21,12 @@
         console.log(user)
         this.currentUser = user
       })
+    },
+    methods: {
+      signOut () {
+        firebase.auth().signOut()
+        this.$router.push('/')
+      }
     }
   }
 
