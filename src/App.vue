@@ -1,11 +1,16 @@
 <template>
   <div id='app'>
+    <TopMenu />
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {
+import TopMenu from './components/TopMenu'
 
+export default {
+  components: {
+    TopMenu
+  }
 }
 </script>
