@@ -20,7 +20,10 @@
     }),
     methods: {
       save () {
-        this.$emit('save')
+        this.$emit('save', {
+          name: this.name,
+          discription: this.discription
+        })
       }
     }
   }

@@ -12,8 +12,8 @@
       ProfileForm
     },
     methods: {
-      save () {
-        console.log('save form')
+      save (data) {
+        console.log(data)
       }
     }
   }
