@@ -6,7 +6,7 @@
     </div>
     <div class="field">
       <label>Discription</label>
-      <input v-model="discription">
+      <input v-model="description">
     </div>
     <button class="ui submit blue button">Save</button>
   </form>
@@ -14,16 +14,23 @@
 
 <script>
   export default {
+    props: ['value'],
     data: () => ({
       name: '',
-      discription: ''
+      description: ''
     }),
+    created () {
+      console.log(this.value)
+      this.name = this.value.name
+      this.description = this.value.description
+    },
     methods: {
       save () {
-        this.$emit('save', {
+        this.$emit('input', {
           name: this.name,
-          discription: this.discription
+          description: this.description
         })
+        this.$emit('save')
       }
     }
   }
