@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import firebase from 'firebase'
 
+import { Auth } from './services'
 import Home from './components/Home'
 import Profile from './components/Profile'
 import ProfileEdit from './components/ProfileEdit'
@@ -24,8 +24,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   console.log(to)
   if (to.matched.some((x) => x.meta.requiresAuth)) {
-    const cancle = firebase.auth().onAuthStateChanged((user) => {
-      cancle()
+    Auth.requiresUser((user) => {
       if (user) {
         next()
         return
