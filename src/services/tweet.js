@@ -2,7 +2,15 @@ import firebase from 'firebase'
 import Auth from './auth'
 
 const list = (callback) => {
-  firebase.database().ref('tweet').on('value', callback)
+  firebase.database().ref('tweet')
+    // .limitToLast(3)
+    .on('value', (snapshots) => {
+      const result = []
+      snapshots.forEach((snapshot) => {
+        result.push(snapshot.val())
+      })
+      callback(result.reverse())
+    })
 }
 
 const post = (content) => {
