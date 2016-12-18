@@ -25,14 +25,14 @@
     }),
     methods: {
       open () {
-        $(this.$el)
+        window.$(this.$el)
           .modal({
             closable: false
           })
           .modal('show')
       },
       close () {
-        $(this.$el)
+        window.$(this.$el)
           .modal('hide')
       },
       selectedFile () {

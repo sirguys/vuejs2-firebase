@@ -1,7 +1,6 @@
 var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
-const webpack = require('webpack')
 var projectRoot = path.resolve(__dirname, '../')
 
 var env = process.env.NODE_ENV
@@ -24,7 +23,6 @@ module.exports = {
     extensions: ['', '.js', '.vue'],
     fallback: [path.join(__dirname, '../node_modules')],
     alias: {
-      'vue$': 'vue/dist/vue.common.js',
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
       'components': path.resolve(__dirname, '../src/components')
@@ -91,12 +89,5 @@ module.exports = {
         browsers: ['last 2 versions']
       })
     ]
-  },
-  plugins: [
-    new webpack.ProvidePlugin({
-      'window.$': 'jquery',
-      '$': 'jquery',
-      'jQuery': 'jquery'
-    })
-  ]
+  }
 }

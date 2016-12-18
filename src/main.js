@@ -4,6 +4,7 @@ import firebase from 'firebase'
 
 import '!script!jquery/dist/jquery.min.js'
 import '!script!semantic-ui-css/semantic.min.js'
+import '!script!semantic-ui-css/components/modal.js'
 import '!style!css!semantic-ui-css/semantic.min.css'
 
 import App from './App'
