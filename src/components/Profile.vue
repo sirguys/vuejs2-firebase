@@ -22,9 +22,10 @@
       }
     }),
     created () {
-      Me.get((data) => {
-        this.profile = data
-      })
+      Me.get()
+        .then((data) => {
+          this.profile = data
+        })
     }
     // , computed: {
     //   uppercaseName () {

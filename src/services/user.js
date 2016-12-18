@@ -1,10 +1,16 @@
 import firebase from 'firebase'
+// import axios from 'axios'
 
-const get = (id, callback) => {
-  firebase.database()
+const get = (id) => {
+  // return axios.get(`https://twitty-sirguys.firebaseio.com/user/${id}.json`)
+  //   .then((res) => {
+  //     return res.data
+  //   })
+  return firebase.database()
     .ref(`user/${id}`)
-    .once(`value`, (snapshot) => {
-      callback(snapshot.val())
+    .once(`value`)
+    .then((snapshot) => {
+      return snapshot.val()
     })
 }
 
