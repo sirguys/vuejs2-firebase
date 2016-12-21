@@ -10,14 +10,10 @@ import '!style!css!semantic-ui-css/semantic.min.css'
 
 import App from './App'
 
+console.log(process.env.DEBUG)
+
 // Initialize Firebase
-firebase.initializeApp({
-  apiKey: 'AIzaSyDG1QTy_MwugSQTwMu2NgYVicWnTdsU540',
-  authDomain: 'twitty-sirguys.firebaseapp.com',
-  databaseURL: 'https://twitty-sirguys.firebaseio.com',
-  storageBucket: 'twitty-sirguys.appspot.com',
-  messagingSenderId: '776989427989'
-})
+firebase.initializeApp(process.env.FIREBASE)
 
 const ticker = new Vue({
   data: () => ({
