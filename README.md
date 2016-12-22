@@ -1,6 +1,6 @@
 # vuejs2-firebase
 
-> A Vue.js project
+> https://twitty-sirguys.firebaseapp.com/
 
 ## Build Setup
 
